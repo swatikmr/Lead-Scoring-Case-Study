@@ -1,20 +1,91 @@
+# Lead Scoring Analysis Project
 
-## Lead Scoring Case Study
+## Project Overview
+This project implements a lead scoring model for an education company to identify the most promising leads likely to convert into paying customers. Using logistic regression, the model analyzes various lead characteristics to predict conversion probability and assign lead scores.
 
+## Table of Contents
+- [Installation](#installation)
+- [Data Description](#data-description)
+- [Project Structure](#project-structure)
+- [Model Performance](#model-performance)
+- [Key Findings](#key-findings)
 
-An education company named X Education sells online courses to industry professionals. On any given day, many professionals who are interested in the courses land on their website and browse for courses. 
+## Installation
 
- 
+### Prerequisites
+- Python 3.7+
+- pip package manager
 
-The company markets its courses on several websites and search engines like Google. Once these people land on the website, they might browse the courses or fill up a form for the course or watch some videos. When these people fill up a form providing their email address or phone number, they are classified to be a lead. Moreover, the company also gets leads through past referrals. Once these leads are acquired, employees from the sales team start making calls, writing emails, etc. Through this process, some of the leads get converted while most do not. The typical lead conversion rate at X education is around 30%. 
+## Data Description
+The analysis uses the 'Leads.csv' dataset containing information about potential leads, including:
+- Lead source and origin
+- Total visits and time spent on website
+- Page views per visit
+- Lead demographics
+- Specialization interests
+- Current occupation
+- Conversion status
 
- 
+## Project Structure
+The project follows these main steps:
+1. Data Reading & Understanding
+2. Data Cleaning
+   - Handling missing values
+   - Removing redundant columns
+   - Treatment of outliers
+3. Exploratory Data Analysis (EDA)
+4. Feature Engineering
+   - Binary variable conversion
+   - Dummy variable creation
+5. Model Building
+   - Train-test split
+   - Feature scaling
+   - Logistic regression implementation
+6. Model Evaluation
+   - ROC curve analysis
+   - Precision-Recall metrics
+   - Cutoff optimization
 
-Now, although X Education gets a lot of leads, its lead conversion rate is very poor. For example, if, say, they acquire 100 leads in a day, only about 30 of them are converted. To make this process more efficient, the company wishes to identify the most potential leads, also known as ‘Hot Leads’. If they successfully identify this set of leads, the lead conversion rate should go up as the sales team will now be focusing more on communicating with the potential leads rather than making calls to everyone. 
- 
+## Model Performance
 
-X Education has appointed you to help them select the most promising leads, i.e. the leads that are most likely to convert into paying customers. The company requires you to build a model wherein you need to assign a lead score to each of the leads such that the customers with higher lead score have a higher conversion chance and the customers with lower lead score have a lower conversion chance. The CEO, in particular, has given a ballpark of the target lead conversion rate to be around 80%.
+### Training Set Metrics
+- Accuracy: 78.04%
+- Sensitivity: 81.71%
+- Specificity: 75.78%
+- Precision: 78.99%
+- Recall: 64.69%
 
- 
- 
-You have been provided with a leads dataset from the past with around 9000 data points. This dataset consists of various attributes such as Lead Source, Total Time Spent on Website, Total Visits, Last Activity, etc. which may or may not be useful in ultimately deciding whether a lead will be converted or not. The target variable, in this case, is the column ‘Converted’ which tells whether a past lead was converted or not wherein 1 means it was converted and 0 means it wasn’t converted. You can learn more about the dataset from the data dictionary provided in the zip folder at the end of the page. Another thing that you also need to check out for are the levels present in the categorical variables. Many of the categorical variables have a level called 'Select' which needs to be handled because it is as good as a null value (think why?).
+### Testing Set Metrics
+- Accuracy: 78.46%
+- Sensitivity: 83.10%
+- Specificity: 75.43%
+- Precision: 68.83%
+- Recall: 83.10%
+
+## Key Findings
+
+### Top Converting Lead Characteristics
+1. Working Professionals
+2. Leads from Lead Add Form
+3. Leads from Welingak Website
+
+### Lead Scoring Implementation
+- Optimal probability cutoff: 0.314
+- Lead scores range from 0-100
+- Conversion rate: 83.10%
+
+### Recommendations
+1. Focus marketing efforts on working professionals
+2. Optimize Lead Add Form for better conversions
+3. Strengthen partnership with Welingak Website
+4. Prioritize leads with scores above 31.4
+
+## Contributing
+To contribute to this project:
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details
